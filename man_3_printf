@@ -1,0 +1,43 @@
+.TH PRINTF 3 "12 March 2022" "version 0.20" "printf_man page"
+.SH NAME
+.Gregoire COUDRIN and Hiromi VARNIER
+.B PRINTF
+.A prototype of the original PRINTF function used in C
+.SH SYNOPSIS
+
+.SH DESCRIPTION
+
+.SH LIBRARY
+All libraries and prototypes to be used are in the "main.h" from Holberton School 0x11. C - printf project
+.B _printf()
+A function return the number of characters printed
+.SH Return value
+
+.SH SYNOPSIS
+     #include <stdio.h>
+
+     int
+     printf(const char * restrict format, ...);
+
+To use _printf you have to use the following key characters preceeded by % symbol.
+.RS 3
+%c: To be used to print characters
+.RS 0
+%s: To be used to print strings
+.RS 0
+%d: To print integers
+.RS 0
+%i: To print integers
+.RS 0
+%o: To print a number in octal
+.RS 0
+%x: To print a number in hexadecimal
+
+
+
+Report to 4251@holbertonschool.com or 4336@holbertonschool.com
+.SH AUTHOR
+Gregoire COUDRIN
+Hiromi VARNIER
+
+Copyright (c) 2022 Gregoire Coudrin & Hiromi Varnier
