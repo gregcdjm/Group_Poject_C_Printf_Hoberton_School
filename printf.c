@@ -24,7 +24,7 @@ void print_str(va_list args)
 	str = va_arg(args, char*);
 	for (i = 0; str[i] != '\0'; i++)
 	{
-       	_putchar(str[i]);
+		_putchar(str[i]);
 	}
 }
 /**
@@ -32,24 +32,24 @@ void print_str(va_list args)
  * @args: arg
  * Return: rien
  */
-/*void print_int(va_list args)
+/**
+void print_int(va_list args)
 {
 	int d;
 	int i;
 	int j = 0;
 
 	d = va_arg(args, int);
-	d = 0000838383
 	for (i = 0; d[i] != '\0' && j != 1; i++)
 	{
 		j = 1;
 	}
 	for (i = 0; d[i] != '\0'; i++)
 	{
-		_putchar(d[i] + 48);decaler 0>48 et 1>49...8>56 et 9>57
+		_putchar(d[i] + 48);
 	}
-}
-**
+}*/
+/**
  * print_%i - print %i
  * @args: arg
  * Return: rien
@@ -96,9 +96,7 @@ int _printf(const char *format, ...)
 			for (j = 0; format[i] != *(func[j].c); j++)
 				;
 			if (func[j].c)
-			{
 				func[j].f(args);
-			}
 		}
 	}
 	va_end(args);

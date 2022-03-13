@@ -9,9 +9,11 @@
  */
 int main(void)
 {
-	char *s = "X";
-	char c = 'r';
+	char c = 'B';
+	char *s = "CD";
+	char f = 'E';
+	char *g = "FG";
 
-	_printf("1A%s2B%c", s, c);
-	return (0);/*1AX2Br*/
+	_printf("A%c%s%c%sH", c, s, f, g);
+	return (0);/*ABCDEFGH*/
 }
