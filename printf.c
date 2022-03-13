@@ -93,7 +93,9 @@ int _printf(const char *format, ...)
 		else if (format[i] == '%')
 		{
 			i++;
-			for (j = 0; func[j].c && format[i] == *(func[j].c); j++)
+			for (j = 0; format[i] != *(func[j].c); j++)
+				;
+			if (func[j].c)
 			{
 				func[j].f(args);
 			}
