@@ -1,9 +1,11 @@
 #include "main.h"
+
 /**
  * print_char - print char
- * @args: arg
+ * @args: char
  * Return: rien
  */
+
 void print_char(va_list args)
 {
 	int c;
@@ -11,11 +13,13 @@ void print_char(va_list args)
 	c = va_arg(args, int);
 	_putchar(c);
 }
+
 /**
- * print_string - print string
- * @args: arg
+ * print_str - print string
+ * @args: string
  * Return: rien
  */
+
 void print_str(va_list args)
 {
 	char *str;
@@ -27,11 +31,13 @@ void print_str(va_list args)
 		_putchar(str[i]);
 	}
 }
+
 /**
- * print_%d - print decimal
- * @args: arg
+ * print_int - print no decimal
+ * @args: numbers without 0
  * Return: rien
  */
+
 void print_int(va_list args)
 {
 	int Div = 1;
@@ -56,27 +62,40 @@ void print_int(va_list args)
 		Div = Div / 10;
 	}
 }
+
 /**
- * print_%i - print %i
- * @args: arg
+ * print_0int - print decimal
+ * @args: numbers with 0
  * Return: rien
+ */
 
 void print_0int(va_list args)
 {
-	int d;
-	int i;
-	int j = 0;
+	int Div = 1;
+	int n;
 
-	i = va_arg(args, int);
-	for (d = 0; i[d] != '\0' && j
-	_putchar(i);
+	n = va_arg(args, int);
+
+	_putchar(48);
+        if (n < 0 && n != 0)
+	{
+		_putchar(45);
+		n = n * -1;
+	}
+	while (n / Div * 10 != 0)
+		Div = Div * 10;
+	Div /= 10;
+	while (Div > 0 && n != 0)
+	{
+		_putchar((n / Div) + 48);
+		n = n % Div;
+		Div = Div / 10;
+	}
 }
-*/
 
 /**
 * _printf - affiche une chaîne de caractère
 * @format: la chaîne de caractère
-* @...: les variables de la chaîne format
 * Return: affichage succésive de putchar
 */
 
@@ -86,8 +105,8 @@ int _printf(const char *format, ...)
 	struc func[] = {
 		{"c", print_char},
 		{"s", print_str},
-		{"i", print_0int},/*
-		{"d", print_int},*/
+		{"i", print_0int},
+		{"d", print_int},
 		{NULL, NULL}
 	};
 	int i, j;
