@@ -5,10 +5,16 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
-type struct func {
-	char* c;
+typedef struct func{
+	char *c;
 	void (*f)(va_list args);
-}struct
+}struc;
+
+void print_char(va_list args);
+void print_str(va_list args);
+void print_int(va_list args);
+void print_0int(va_list args);
 int _printf(const char *format, ...);
+int _putchar(char c);
 
 #endif
