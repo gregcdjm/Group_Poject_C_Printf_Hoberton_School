@@ -5,5 +5,6 @@ type struct func {
 	char* c;
 	void (*f)(va_list args);
 }struct
+int _printf(const char *format, ...);
 
 #endif
