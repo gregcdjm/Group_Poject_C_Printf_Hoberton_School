@@ -1,9 +1,9 @@
 # 0x11. C - print 
 ## Write your own printf function
 
-> Purpose of printf project：
+> Purpose of the project：
 
-to work together to complete the task！
+:couple:This is the 1st group project and means to complete the task together!! :couple::couple::couple:
 
 > Flowchart:
 <img width="639" alt="fb82e24f7282c569aed3" src="https://user-images.githubusercontent.com/69083631/158079509-c8a01374-a81b-41ba-9a74-6309091febce.png">
