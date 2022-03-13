@@ -76,8 +76,9 @@ void print_0int(va_list args)
 
 	n = va_arg(args, int);
 
-	_putchar(48);
-        if (n < 0 && n != 0)
+	if (n == 0)
+		_putchar(48);
+	else if (n < 0)
 	{
 		_putchar(45);
 		n = n * -1;
@@ -85,7 +86,7 @@ void print_0int(va_list args)
 	while (n / Div * 10 != 0)
 		Div = Div * 10;
 	Div /= 10;
-	while (Div > 0 && n != 0)
+	while (Div > 0)
 	{
 		_putchar((n / Div) + 48);
 		n = n % Div;
