@@ -9,11 +9,8 @@
  */
 int main(void)
 {
-	char c = 'B';
-	char *s = "CD";
-	char f = 'E';
-	char *g = "FG";
+	int i = 05;
 
-	_printf("A%c%s%c%sH", c, s, f, g);
-	return (0);/*ABCDEFGH*/
+	_printf("1234%d678", i);
+	return (0);/*12345678*/
 }

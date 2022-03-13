@@ -32,23 +32,30 @@ void print_str(va_list args)
  * @args: arg
  * Return: rien
  */
-/**
 void print_int(va_list args)
 {
-	int d;
-	int i;
-	int j = 0;
+	int Div = 1;
+	int n;
 
-	d = va_arg(args, int);
-	for (i = 0; d[i] != '\0' && j != 1; i++)
+	n = va_arg(args, int);
+
+	if (n == 0)
+		_putchar(48);
+	else if (n < 0)
 	{
-		j = 1;
+		_putchar(45);
+		n = n * -1;
 	}
-	for (i = 0; d[i] != '\0'; i++)
+	while (n / Div * 10 != 0)
+		Div = Div * 10;
+	Div /= 10;
+	while (Div > 0)
 	{
-		_putchar(d[i] + 48);
+		_putchar((n / Div) + 48);
+		n = n % Div;
+		Div = Div / 10;
 	}
-}*/
+}
 /**
  * print_%i - print %i
  * @args: arg
@@ -78,8 +85,8 @@ int _printf(const char *format, ...)
 	va_list args;
 	struc func[] = {
 		{"c", print_char},
-		{"s", print_str},/*
-		{"i", print_0int},
+		{"s", print_str},
+		{"i", print_0int},/*
 		{"d", print_int},*/
 		{NULL, NULL}
 	};
