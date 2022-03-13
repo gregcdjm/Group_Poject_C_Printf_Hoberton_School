@@ -9,7 +9,9 @@
  */
 int main(void)
 {
-	char *s = "ok";
-		_printf("%s", s);
-    return (0);
+	char *s = "X";
+	char c = 'r';
+
+	_printf("1A%s2B%c", s, c);
+	return (0);/*1AX2Br*/
 }
