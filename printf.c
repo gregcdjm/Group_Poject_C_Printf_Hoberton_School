@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	struc func[] = {
-		{"c", print_char},
+		/*{"c", print_char},*/
 		{"s", print_str},/*
 		{"i", print_0int},
 		{"d", print_int},*/
@@ -19,6 +19,7 @@ int _printf(const char *format, ...)
 	};
 	int i, j;
 
+	va_start(args, format);
 	for (i = 0; format[i]; i++)
 		if (format[i] != '%')
 		{
@@ -34,5 +35,6 @@ int _printf(const char *format, ...)
 			}
 			i++;
 		}
+	va_end(args);
 	return (0);
 }

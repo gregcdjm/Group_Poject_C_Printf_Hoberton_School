@@ -6,12 +6,19 @@
  * @args: arg
  * Return: rien
  */
-void print_char(va_list args)
+/*void print_char(va_list args)
 {
-	char c;
+	int c;
+
+	if (c == NULL)
+		free(c);
+	else
+	{
 	c = va_arg(args, int);
 	_putchar(c);
-}
+	free(c);
+	}
+}*/
 /**
  * print_string - print string
  * @args: arg
@@ -22,13 +29,18 @@ void print_str(va_list args)
 	char *str;
 	int i;
 
-	str = malloc(8);
-	str = va_arg(args, char*);
-	for (i = 0; str[i] != '\0'; i++)
+	str = malloc(sizeof(char) * 3);
+	if (str == NULL)
+		free(str);
+	else
 	{
+		str = va_arg(args, char*);
+		for (i = 0; str[i] != '\0'; i++)
+		{
 		_putchar(str[i]);
 	}
-	free(str);
+		free(str);
+	}
 }
 /**
  * print_%d - print decimal
