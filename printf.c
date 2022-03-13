@@ -11,10 +11,10 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	struc func[] = {
-		{"c", print_char}
-		{"s", print_str}
-		{"i", print_0int}
-		{"d", print_int}
+		{"c", print_char},
+		{"s", print_str},/*
+		{"i", print_0int},
+		{"d", print_int},*/
 		{NULL, NULL}
 	};
 	int i, j;
