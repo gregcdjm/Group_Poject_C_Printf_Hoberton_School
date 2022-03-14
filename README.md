@@ -1,4 +1,4 @@
-# :printer: printf  
+# :printer: printf
 ### Write your own printf function
 
 ## What is printf? ##
@@ -11,7 +11,7 @@ Printf is to do formatted printing in the C language.
 :couple:This is the 1st group project and means to complete the task together!! :couple::couple::couple:
 
 ## Description ##
-A formatted output conversion C program completed . 
+A formatted output conversion C program completed .
 The program is a recreation of the C standard library function printf from scratch.
 
 ## How to use? ##
@@ -20,6 +20,10 @@ To use the _printf compile all `.c` files in the repository and include the head
 Example main.c:
 ```
 #include "main.h"
+/**
+ * main - function print
+ * Return: 0
+ */
 
 int main(void)
 {
@@ -30,7 +34,7 @@ int main(void)
 ```
 Compilation:
 ```
-$ gcc *.c -o 
+$ gcc *.c -o
 ```
 Output:
 ```

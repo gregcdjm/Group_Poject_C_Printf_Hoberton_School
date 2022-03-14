@@ -4,11 +4,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+/**
+ * struct func - function
+ * @c: param
+ * @f: param
+ */
 
-typedef struct func{
+typedef struct func
+{
 	char *c;
 	void (*f)(va_list args);
-}struc;
+} struc;
 
 void print_char(va_list args);
 void print_str(va_list args);
