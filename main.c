@@ -35,14 +35,19 @@ int main(void)
     printf("\n\n");
     _printf("z%%\n");
     printf("z%%\n");/*z%%\n =>  */
+    printf("\n");
     _printf("%%z\n");
     printf("%%z\n");/* %%z\n => */
+    printf("\n");
     _printf("z%\n");
     printf("z%\n");/* z%\n => */
+    printf("\n");
     _printf("%z\n");
     printf("%z\n");/* %z\n => */
+    printf("\n");
     _printf("%\n");
     printf("%\n");/* "%\n" => */
+    printf("%\n");
     _printf("%%\n");
     printf("%%\n");/* "%%\n" => */
     return (0);
