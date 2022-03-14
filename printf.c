@@ -6,12 +6,13 @@
  * Return: rien
  */
 
-void print_char(va_list args)
+int print_char(va_list args)
 {
-	int c;
+	int c, k = 0;
 
 	c = va_arg(args, int);
-	_putchar(c);
+	_putchar(c), k = 0;
+	return (k);
 }
 
 /**
@@ -20,16 +21,17 @@ void print_char(va_list args)
  * Return: rien
  */
 
-void print_str(va_list args)
+int print_str(va_list args)
 {
 	char *str;
-	int i;
+	int i, k = 0;
 
 	str = va_arg(args, char*);
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		_putchar(str[i]);
+		_putchar(str[i]), k = 0;
 	}
+	return (k);
 }
 
 /**
@@ -38,18 +40,18 @@ void print_str(va_list args)
  * Return: rien
  */
 
-void print_int(va_list args)
+int print_int(va_list args)
 {
 	int Div = 1;
-	int n;
+	int n, k = 0;
 
 	n = va_arg(args, int);
 
 	if (n == 0)
-		_putchar(48);
+		_putchar(48), k++;
 	else if (n < 0)
 	{
-		_putchar(45);
+		_putchar(45), k++;
 		n = n * -1;
 	}
 	while (n / Div * 10 != 0)
@@ -57,10 +59,11 @@ void print_int(va_list args)
 	Div /= 10;
 	while (Div > 0)
 	{
-		_putchar((n / Div) + 48);
+		_putchar((n / Div) + 48), k++;
 		n = n % Div;
 		Div = Div / 10;
 	}
+	return (k);
 }
 
 /**
@@ -69,18 +72,18 @@ void print_int(va_list args)
  * Return: rien
  */
 
-void print_0int(va_list args)
+int print_0int(va_list args)
 {
 	int Div = 1;
-	int n;
+	int n, k = 0;
 
 	n = va_arg(args, int);
 
 	if (n == 0)
-		_putchar(48);
+		_putchar(48), k++;
 	else if (n < 0)
 	{
-		_putchar(45);
+		_putchar(45), k++;
 		n = n * -1;
 	}
 	while (n / Div * 10 != 0)
@@ -88,10 +91,11 @@ void print_0int(va_list args)
 	Div /= 10;
 	while (Div > 0)
 	{
-		_putchar((n / Div) + 48);
+		_putchar((n / Div) + 48), k++;
 		n = n % Div;
 		Div = Div / 10;
 	}
+	return (k);
 }
 
 /**
@@ -110,27 +114,29 @@ int _printf(const char *format, ...)
 		{"d", print_int},
 		{NULL, NULL}
 	};
-	int i, j;
+	int i, j, n = 0;
 
+	if (format == NULL)
+		return (-1);
 	va_start(args, format);
 	for (i = 0; format[i]; i++)
 	{
 		if (format[i] != '%')
-			_putchar(format[i]);
+			_putchar(format[i]), n++;
 		else if (format[i + 1] == '%')
-			_putchar('%'), i++;
+			_putchar('%'), i++, n++;
 		else
 		{
 			i++;
 			j = 0;
-			while (func[j].c !=NULL && format[i] != *(func[j].c))
+			while (func[j].c && format[i] != *(func[j].c))
 				j++;
 			if (func[j].c)
-				func[j].f(args);
+				n += func[j].f(args);
 			else
-				_putchar('%'), _putchar('r');
+				_putchar('%'), _putchar(format[i]), n += 2;
 		}
 	}
 	va_end(args);
-	return (i);
+	return (n);
 }
