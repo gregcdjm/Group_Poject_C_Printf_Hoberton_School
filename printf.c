@@ -67,38 +67,6 @@ int print_int(va_list args)
 }
 
 /**
- * print_0int - print decimal
- * @args: numbers with 0
- * Return: rien
- */
-
-int print_0int(va_list args)
-{
-	int Div = 1;
-	int n, k = 0;
-
-	n = va_arg(args, int);
-
-	if (n == 0)
-		_putchar(48), k++;
-	else if (n < 0)
-	{
-		_putchar(45), k++;
-		n = n * -1;
-	}
-	while (n / Div * 10 != 0)
-		Div = Div * 10;
-	Div /= 10;
-	while (Div > 0)
-	{
-		_putchar((n / Div) + 48), k++;
-		n = n % Div;
-		Div = Div / 10;
-	}
-	return (k);
-}
-
-/**
 * _printf - affiche une chaîne de caractère
 * @format: la chaîne de caractère
 * Return: affichage succésive de putchar
@@ -110,7 +78,7 @@ int _printf(const char *format, ...)
 	struc func[] = {
 		{"c", print_char},
 		{"s", print_str},
-		{"i", print_0int},
+		{"i", print_int},
 		{"d", print_int},
 		{NULL, NULL}
 	};
@@ -123,17 +91,15 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 			_putchar(format[i]), n++;
-		else if (format[i + 1] == '%')
-			_putchar('%'), i++, n++;
 		else
 		{
-			i++, j = 0;
-			while (func[j].c && format[i] != *(func[j].c))
+			j = 0;
+			while (func[j].c && format[i + 1] != *(func[j].c))
 				j++;
-			if (func[j].c)
-				n += func[j].f(args);
+			if (func[j].c != NULL)
+				n += func[j].f(args), i++;
 			else
-				_putchar('%'), _putchar(format[i]), n += 2;
+				_putchar(format[i]), n++;
 		}
 	}
 	va_end(args);
