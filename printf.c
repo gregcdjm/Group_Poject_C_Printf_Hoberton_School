@@ -117,15 +117,20 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 			_putchar(format[i]);
-		else if (format[i] == '%')
+		else if (format[i + 1] == '%')
+			_putchar('%'), i++;
+		else
 		{
 			i++;
-			for (j = 0; format[i] != *(func[j].c); j++)
-				;
+			j = 0;
+			while (func[j].c !=NULL && format[i] != *(func[j].c))
+				j++;
 			if (func[j].c)
 				func[j].f(args);
+			else
+				_putchar('%'), _putchar('r');
 		}
 	}
 	va_end(args);
-	return (0);
+	return (i);
 }
