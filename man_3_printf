@@ -1,43 +1,73 @@
-.TH PRINTF 3 "12 March 2022" "version 0.20" "printf_man page"
+.TH PRINTF 3 "12 March 2022" "version Dec 2 2009" "printf_3_man page"
+
 .SH NAME
-.Gregoire COUDRIN and Hiromi VARNIER
-.B PRINTF
+_printf - prints out the string given in the first argument
+
+.SH PRINTF
 .A prototype of the original PRINTF function used in C
-.SH SYNOPSIS
-
-.SH DESCRIPTION
-
-.SH LIBRARY
-All libraries and prototypes to be used are in the "main.h" from Holberton School 0x11. C - printf project
-.B _printf()
-A function return the number of characters printed
-.SH Return value
+.A function return the number of characters printed
 
 .SH SYNOPSIS
      #include <stdio.h>
+     int_printf ([OPTIONS][ARGUMENTS],...);
 
-     int
-     printf(const char * restrict format, ...);
+.SH DESCRIPTION
+Prints ARGUMENTS as passed or according to identifier. Execute according to options.
 
+.SH LIBRARY
+All libraries and prototypes to be used are in the "main.h" from Holberton School 0x11. C - printf project
+
+.SH CONVERSION IDENTIFIERS
 To use _printf you have to use the following key characters preceeded by % symbol.
-.RS 3
-%c: To be used to print characters
 .RS 0
-%s: To be used to print strings
+%c: To print a single character > char
 .RS 0
-%d: To print integers
+%s: To print string of characters > char *
 .RS 0
-%i: To print integers
+%d: To print a decimal (base 10) number > int
 .RS 0
-%o: To print a number in octal
+%i: To print an integer in base 10 > int
 .RS 0
-%x: To print a number in hexadecimal
+%u: To print an unsigned decimal (base 10) number > unsigned int
+.RS 0
+%o: To print a number in octal (base 8) > int, short, unsigned int
+.RS 0
+%x: To print a number in hexadecimal (base 16) > int, unsigned int
+.RS 0
+%X: To print integers in hexadecimal > int, unsigned int
+.RS 0
+%%: To print a percent sign(\% also works)
+.RS 0
+%S: To print strings > char *
+.RS 0
+%p: To print void * pointer argument in hexadecimal
+.RS 0
+%l: To print long > long
+.RS 0
+%h: To print single precision integers
+.RS 0
+%r: To print a carriage return
+.RS 0
+%R: To print the rot13'ed string
+
+.SH FLAGS
+.RS 0
+space: Prepends a space for positive signed-numeric types
+.RS 0
+#: Alternate form
+.RS 0
+0: When the 'width' option is specified, prepends zeros for numeric types
+.RS 0
+-: Left-align the output of this placeholder
+.RS 0
++: Prepends a plus for positive signed-numeric types
 
 
 
-Report to 4251@holbertonschool.com or 4336@holbertonschool.com
 .SH AUTHOR
 Gregoire COUDRIN
 Hiromi VARNIER
+Thank you for your report to
+4251@holbertonschool.com or 4336@holbertonschool.com
 
 Copyright (c) 2022 Gregoire Coudrin & Hiromi Varnier
