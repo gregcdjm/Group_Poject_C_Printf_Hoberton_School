@@ -127,8 +127,7 @@ int _printf(const char *format, ...)
 			_putchar('%'), i++, n++;
 		else
 		{
-			i++;
-			j = 0;
+			i++, j = 0;
 			while (func[j].c && format[i] != *(func[j].c))
 				j++;
 			if (func[j].c)
