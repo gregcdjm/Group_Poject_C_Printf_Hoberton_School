@@ -11,7 +11,7 @@ int print_char(va_list args)
 	int c, k = 0;
 
 	c = va_arg(args, int);
-	_putchar(c), k = 0;
+	_putchar(c), k++;
 	return (k);
 }
 
@@ -29,7 +29,7 @@ int print_str(va_list args)
 	str = va_arg(args, char*);
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		_putchar(str[i]), k = 0;
+		_putchar(str[i]), k++;
 	}
 	return (k);
 }
