@@ -21,5 +21,6 @@ int print_str(va_list args);
 int print_int(va_list args);
 int _printf(const char *format, ...);
 int _putchar(char c);
+int func_print(char j, va_list args);
 
 #endif
