@@ -116,8 +116,16 @@ int _printf(const char *format, ...)
 					break;
 				} j++;
 			}
+			if (*(func[j].c) == '\0')
+			{
+				if (format[i + 1] == '%')
 			if (*(func[j].c) == '\0' && format[i + 1] == '%')
 					_putchar('%'), i++, n++;
+				else
+				{
+					_putchar('%');
+					_putchar(format[i + 1]), n += 2, i++;
+				}
 			else
 			{
 				_putchar('%');
