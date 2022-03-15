@@ -95,11 +95,8 @@ int _printf(const char *format, ...)
 	int i = 0, j = 0, n = 0;
 	va_list args;
 	struc func[] = {
-		{"c", print_char},
-		{"s", print_str},
-		{"d", print_int},
-		{"i", print_int},
-		{"\0", NULL}
+		{"c", print_char}, {"s", print_str}, {"d", print_int},
+		{"i", print_int}, {"\0", NULL}
 	};
 	if (format == NULL)
 		return (-1);
