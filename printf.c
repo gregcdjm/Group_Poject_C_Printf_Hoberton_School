@@ -91,12 +91,21 @@ int print_int(va_list args)
 */
 
 int _printf(const char *format, ...)
+#include "main.h"
+
+/**
+ * _printf - maint function
+ * @format: main param
+ * Return: int
+ */
+
+int _printf(const char *format, ...)
 {
 	int i = 0, j = 0, n = 0;
 	va_list args;
-	struc func[] = {
-		{"c", print_char}, {"s", print_str}, {"d", print_int},
-		{"i", print_int}, {"\0", NULL}
+	print func[] = {
+		{"c", print_char}, {"s", print_str},
+		{"d", print_d}, {"i", print_d}, {"\0", NULL}
 	};
 	if (format == NULL)
 		return (-1);
@@ -119,17 +128,12 @@ int _printf(const char *format, ...)
 			if (*(func[j].c) == '\0')
 			{
 				if (format[i + 1] == '%')
-			if (*(func[j].c) == '\0' && format[i + 1] == '%')
 					_putchar('%'), i++, n++;
 				else
 				{
 					_putchar('%');
 					_putchar(format[i + 1]), n += 2, i++;
 				}
-			else
-			{
-				_putchar('%');
-				_putchar(format[i + 1]), n += 2, i++;
 			}
 		}
 	}
