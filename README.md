@@ -43,9 +43,8 @@ Hello, World!
 $
 ```
 ## Flowchart ##
-example :
 
-<img width="639" alt="fb82e24f7282c569aed3" src="https://user-images.githubusercontent.com/69083631/158079509-c8a01374-a81b-41ba-9a74-6309091febce.png">
+![This is an image](https://user-images.githubusercontent.com/69083631/158465780-cb509342-8788-4d8e-bd28-93ea99dd0b85.jpg)
 
 
 
