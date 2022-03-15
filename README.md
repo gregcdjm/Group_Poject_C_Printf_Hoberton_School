@@ -53,9 +53,9 @@ $
 > Resources:
 [printf (3)](https://github.com/gregcdjm/printf/edit/main/man_3_printf)
 
-> Percent Sign:
+> A Percent Sign with a letter:
 
-| Sign | Description |
+| Letter | Description |
 | ------------- | ------------- |
 | c | To print a single character |
 | s | To print string of characters |
