@@ -82,24 +82,37 @@ int _printf(const char *format, ...)
 		{"d", print_int},
 		{NULL, NULL}
 	};
-	int i, j, n = 0;
+	int i = 0;
+	int j = 0;
+	int n = 0;
 
 	if (format == NULL)
 		return (-1);
 	va_start(args, format);
-	for (i = 0; format[i]; i++)
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
 			_putchar(format[i]), n++;
-		else
+		else if (format[i + 1])
 		{
 			j = 0;
-			while (func[j].c && format[i + 1] != *(func[j].c))
-				j++;
-			if (func[j].c != NULL)
-				n += func[j].f(args), i++;
+			while (*(func[j].c) != '\0' && format[i + 1] == *(func[j].c))
+			{
+				n += func[j].f(args);
+				i++;
+				break;
+			}
+			j++;
+		}
+		if (*(func[j].c) == '\0')
+		{
+			if (format[i + 1] == '%')
+				_putchar('%'), i++, n++;
 			else
-				_putchar(format[i]), n++;
+			{
+				_putchar('%');
+				_putchar(format[i + 1]), n = n + 2, i++;
+			}
 		}
 	}
 	va_end(args);
