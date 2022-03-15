@@ -48,32 +48,39 @@ int print_str(va_list args)
 
 int print_int(va_list args)
 {
-	int Div = 1;
-	int n;
-	int i = 0;
-	unsigned int x = 0;
+	unsigned int m;
+	int n, i, k, digits = 0;
 
 	n = va_arg(args, int);
-	x = n;
-
-	if (n == 0)
-		_putchar(48), i++;
-	else if (n < 0)
+	if (n < 0)
 	{
-		_putchar('-'), i++;
-		x = n * -1;
+		n *= -1;
+		_putchar('-');
+		digits++;
 	}
-	while (x / Div * 10 != 0)
-		Div = Div * 10;
-	Div /= 10;
-	while (Div > 0)
+	m = n;
+	k = 0;
+	while (m / 10 > 0)
 	{
-		_putchar((x / Div) + 48);
-		i++;
-		x = x % Div;
-		Div = Div / 10;
+		m /= 10;
+		k++;
 	}
-	return (i);
+	m = n;
+	while (k != 0)
+	{
+		for (i = 0; i < k; i++)
+		{
+			m /= 10;
+		}
+		m %= 10;
+		_putchar(m + '0');
+		digits++;
+		k--;
+		m = n;
+	}
+	_putchar(m % 10 + '0');
+	digits++;
+	return (digits);
 }
 
 /**
