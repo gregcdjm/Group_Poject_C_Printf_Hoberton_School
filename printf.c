@@ -91,21 +91,12 @@ int print_int(va_list args)
 */
 
 int _printf(const char *format, ...)
-#include "main.h"
-
-/**
- * _printf - maint function
- * @format: main param
- * Return: int
- */
-
-int _printf(const char *format, ...)
 {
 	int i = 0, j = 0, n = 0;
 	va_list args;
-	print func[] = {
+	struc func[] = {
 		{"c", print_char}, {"s", print_str},
-		{"d", print_d}, {"i", print_d}, {"\0", NULL}
+		{"d", print_int}, {"i", print_int}, {"\0", NULL}
 	};
 	if (format == NULL)
 		return (-1);
