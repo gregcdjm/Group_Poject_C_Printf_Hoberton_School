@@ -3,18 +3,20 @@
 
 ## What is printf? ##
 
-Printf is to do formatted printing in the C language.
+Printf is to do formatted printing in the C language.<br>This function is used to print something in the console. This function is a integer type function which means this function returns an integer to the caller function. Printf() returns the number of characters it has printed in the console.
 
 
 > What is this project for?
 
-:couple:This is the 1st group project and means to complete the task together!! :couple::couple::couple:
+:couple:This is the 1st group project and means to complete the task together!! :couple:
 
-## Description ##
-A formatted output conversion C program completed .
-The program is a recreation of the C standard library function printf from scratch.
+## :open_book: Description ##
+Understanding the internal structure of the printf function will deepen your understanding of the C language and reveal the essence of computers.<br>
+The program is a recreation of the C standard library function printf from scratch.<br>
+Through this program we will learn the process of outputting the string given as an argument.<br>
+We can also find out the reason why the output fails, and the return value after the failure.
 
-## How to use? ##
+## :hammer_and_wrench: How to use? ##
 To use the _printf compile all `.c` files in the repository and include the header `main.h`.
 
 Example main.c:
@@ -89,3 +91,9 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
 As a consequence, be careful not to push any c file containing a main function in the root directory of your project (you could have a test folder containing all your tests files including main functions)
 Our main files will include your main header file [main.h](https://github.com/gregcdjm/printf/edit/main/main.h): (#include main.h)
 You might want to look at the gcc flag -Wno-format when testing with your _printf and the standard printf. Example of test file that you could use: [main.c](https://github.com/gregcdjm/printf/edit/main/main.c)
+
+## :couple: About us ##
+This is the first group project in Holberton Paris School in the 15 mars 2020!!<br>
+If you have a question or a comment, please contact us.<br>
+Grégoire COUDRIN (4251@holbertonschool.com)<br>
+Hiromi VARNIER (4336@holbertonschool.com)<br>
