@@ -53,6 +53,26 @@ $
 > Resources:
 [printf (3)](https://github.com/gregcdjm/printf/edit/main/man_3_printf)
 
+> Percent Sign:
+
+| Sign | Description |
+| ------------- | ------------- |
+| c | To print a single character |
+| s | To print string of characters |
+| d | To print a decimal (base 10) number |
+| i | To print an integer in base 10 |
+| u | To print an unsigned decimal (base 10) number |
+| o | To print a number in octal (base 8) |
+| x | To print a number in hexadecimal (base 16) |
+| X | To print integers in hexadecimal |
+| % | To print a percent sign |
+| S | To print strings |
+| p | To print void * pointer argument in hexadecimal |
+| l | To print long |
+| h | To print single precision integers |
+| r | To print a carriage return |
+| R | To print the rot13'ed string |
+
 
 > Requirements:
 ```
