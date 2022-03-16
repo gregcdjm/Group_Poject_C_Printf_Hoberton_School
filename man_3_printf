@@ -31,6 +31,7 @@ Prints ARGUMENTS as passed or according to identifier. Execute according to opti
      OUTPUT
      5
 
+
 .SH LIBRARY
 All libraries and prototypes to be used are in the "main.h" from Holberton School 0x11. C - printf project
 
